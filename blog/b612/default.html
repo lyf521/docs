@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jsBridge 使用文档 | 华丽转身</title>
+    <meta name="description" content="项目规范，书写约束">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.9047b579.css" as="style"><link rel="preload" href="/assets/js/app.469c32d7.js" as="script"><link rel="preload" href="/assets/js/5.8984cee8.js" as="script"><link rel="prefetch" href="/assets/js/2.1a3627a8.js"><link rel="prefetch" href="/assets/js/3.f453878d.js"><link rel="prefetch" href="/assets/js/4.48bacc43.js"><link rel="prefetch" href="/assets/js/6.d8f83c79.js"><link rel="prefetch" href="/assets/js/7.eab42ca7.js"><link rel="prefetch" href="/assets/js/8.9db25ac3.js"><link rel="prefetch" href="/assets/js/9.f55a7bf9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9047b579.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">华丽转身</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/b612/" class="nav-link router-link-active">B612</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">Node</a></li></ul></div></div><div class="nav-item"><a href="/blog/b612/.html" class="nav-link"></a></div><div class="nav-item"><a href="https://github.com/lyf521" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://gitee.com/lee521" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/b612/" class="nav-link router-link-active">B612</a></li><li class="dropdown-item"><!----> <a href="/blog/node/" class="nav-link">Node</a></li></ul></div></div><div class="nav-item"><a href="/blog/b612/.html" class="nav-link"></a></div><div class="nav-item"><a href="https://github.com/lyf521" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://gitee.com/lee521" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>B612咔叽</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/blog/b612/default.html" class="active sidebar-link">jsBridge 使用文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/b612/default.html#文件目录" class="sidebar-link">文件目录</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#引入方式" class="sidebar-link">引入方式</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#appinfo" class="sidebar-link">appInfo</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#save" class="sidebar-link">save</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#sharewithcallback" class="sidebar-link">shareWithCallback</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#调用相机和相册" class="sidebar-link">调用相机和相册</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#getcameraimage" class="sidebar-link">getCameraImage</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#calliosfunction" class="sidebar-link">_calliOSFunction</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#login" class="sidebar-link">login</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#close" class="sidebar-link">close</a></li><li class="sidebar-sub-header"><a href="/blog/b612/default.html#uuid" class="sidebar-link">uuid</a></li></ul></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span></span> <!----></p> <ul class="sidebar-group-items"><li><a href="/blog/b612/h5.html" class="sidebar-link">H5活动配置参数日志</a></li><li><a href="/blog/b612/imgCanvas.html" class="sidebar-link">活动项目中的图片处理</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="jsbridge-使用文档"><a href="#jsbridge-使用文档" aria-hidden="true" class="header-anchor">#</a> jsBridge 使用文档</h1> <div class="tip custom-block"><p class="custom-block-title">提示</p> <p><a href="https://zhaodifont.github.io/kajicam/bridge.html" target="_blank" rel="noopener noreferrer">jsBridge引入Demo地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <h2 id="文件目录"><a href="#文件目录" aria-hidden="true" class="header-anchor">#</a> 文件目录</h2> <p>最新的jsBridge文档请从Demo代码中获取，引入的文件结构如下：</p> <div class="language- extra-class"><pre class="language-text"><code>.
+├─  js
+    ├─  bridge
+    │   ├─  model
+    │   │   ├─  AppCommonResult.js
+    │   │   ├─  AppInfo.js
+    │   │   ├─  CameraResult.js
+    │   │   ├─  EventCameraResult.js
+    │   │   └─  GetCameraResult.js
+    │   ├─  param
+    │   │   ├─  BridgeParam.js
+    │   │   ├─  SaveShareParam.js
+    │   │   └─  EventCameraParam.js
+    │   ├─  AbstractBridge.js
+    │   ├─  AndroidBridge.js
+    │   ├─  BridgeFactory.js
+    │   ├─  IosBridge.js
+    │   ├─  NullBridge.js
+    │   └─  bridgeContext.js
+    └─ util
+       └─ BrowserChecker.js  // 判断浏览器类型
+</code></pre></div><h2 id="引入方式"><a href="#引入方式" aria-hidden="true" class="header-anchor">#</a> 引入方式</h2> <p>引入前先认真查看jsBridge内的方法。</p> <p>首先判断当前运行环境是B612咔叽APP内（分为ios、Android），还是B612咔叽APP外即手机浏览器中。<code>判断为ios: 引入iosBridge</code> <code>android: 引入AndroidBridge</code> <a href></a> <code>其他系统: 引入NullBridge</code> (不触发咔叽的功能 只会给一个log提示)</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">...</span>
+<span class="token comment">// 项目中引入，可直接获取当前环境</span>
+<span class="token keyword">import</span> BridgeFactory <span class="token keyword">from</span> <span class="token string">'@/js/bridge/BridgeFactory'</span>
+<span class="token comment">// APP内可直接调用</span>
+BridgeFactory<span class="token punctuation">.</span><span class="token function">getBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>appInfo<span class="token operator">...</span><span class="token punctuation">.</span>
+
+<span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">=</span>
+
+<span class="token comment">// @/js/bridge/BridgeFactory.js 中的调用方式</span>
+<span class="token keyword">import</span> BrowserChecker <span class="token keyword">from</span> <span class="token string">'../util/BrowserChecker'</span>
+<span class="token keyword">import</span> NullBridge <span class="token keyword">from</span> <span class="token string">'./NullBridge'</span>
+<span class="token keyword">import</span> AndroidBridge <span class="token keyword">from</span> <span class="token string">'./AndroidBridge'</span>
+<span class="token keyword">import</span> IosBridge <span class="token keyword">from</span> <span class="token string">'./IosBridge'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">BridgeFactory</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token function">getBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>BrowserChecker<span class="token punctuation">.</span><span class="token function">isIos</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">IosBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回IOS内的方法</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>B612KajiBridgeInterface <span class="token operator">!=</span> undefined <span class="token operator">&amp;&amp;</span> BrowserChecker<span class="token punctuation">.</span><span class="token function">isAndroid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">AndroidBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回Android内的方法</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">NullBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>实际开发中APP又有测试版（<code>betaApp</code>）和正式版(<code>realApp</code>)的区分。</li> <li>android中<code>betaApp</code>和<code>realApp</code>引用的jsbridge（<code>AndroidBridge.js</code>）代码是一模一样的 没有区别</li> <li>在ios中<code>betaApp</code>和<code>realApp</code>引用的jsbridge有且只有一处区别 (<code>IosBridge.js</code>中 -&gt; <code>_calliOSFunction</code> 函数中) :</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">...</span>
+<span class="token comment">// IosBridge.js</span>
+ <span class="token function">_calliOSFunction</span><span class="token punctuation">(</span>functionName<span class="token punctuation">,</span> args<span class="token punctuation">,</span> sCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> url <span class="token operator">=</span> scheme <span class="token operator">+</span> <span class="token string">&quot;native/&quot;</span><span class="token punctuation">;</span> 
+    <span class="token comment">// - ios betaApp 设置此处scheme为 **b612cnb://native/** </span>
+    <span class="token comment">// - ios realApp 设置此处scheme为 **b612cn://native/**</span>
+    <span class="token operator">...</span>
+ <span class="token punctuation">}</span>
+    <span class="token comment">// 可在config中配置本地环境、测试环境、预上线环境、正式环境</span>
+    <span class="token comment">// 如果scheme设置错误 出现的场景是 在betaApp跳至realApp 或反之</span>
+    <span class="token comment">// 当然 这个场景只会只会出现在ios中</span>
+</code></pre></div><h2 id="appinfo"><a href="#appinfo" aria-hidden="true" class="header-anchor">#</a> appInfo</h2> <p>在APP内运行时，获取APP的信息,调用方式<code>BridgeFactory.getBridge().appInfo(userCallback)</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+  * app 在app内部获取app的信息
+  * @param userCallback
+  *    : callback param 0 - ./model/AppInfo
+*/</span>
+    <span class="token function">appInfo</span><span class="token punctuation">(</span>userCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 注册一个回调函数  此回调函数是属于 AppInfo的</span>
+        <span class="token keyword">const</span> callbackMethodFullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">&quot;appInfo&quot;</span><span class="token punctuation">,</span> userCallback<span class="token punctuation">,</span> AppInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 通过与app约定好的功能名称唤起此功能  </span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;appInfo&quot;</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> callbackMethodFullName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token comment">// this.calliOSFunction(&quot;appInfo&quot;, null, &quot;B612Kaji.Native.ios.Function.getInstance().callback.appInfo&quot;)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">使用场景</p> <p>用appInfo方法的回调来判断 h5页面属于app内/外</p></div> <div class="language-js extra-class"><pre class="language-js"><code>    <span class="token keyword">let</span> isInApp <span class="token operator">=</span> <span class="token boolean">false</span>
+    bridgeFactory<span class="token punctuation">.</span><span class="token function">getBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appInfo</span><span class="token punctuation">(</span>res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// res : {app: '7.3.1', 'os': '23', 'deviceModel': 'CAM-TL00', 'language': 'zh-CN', 'country': 'CN'}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>app<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        isInApp <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// 注 返回的res信息属于异步返回的数据 如果同步的代码中需要使用此信息会失误</span>
+</code></pre></div><h2 id="save"><a href="#save" aria-hidden="true" class="header-anchor">#</a> save</h2> <p>在app内调用保存图片的功能，调用方式<code>BridgeFactory.getBridge().save(...)</code></p> <p>使用频率较低,注意和<code>shareWidthCallback</code>的区别</p> <div class="language-js extra-class"><pre class="language-js"><code>    <span class="token comment">/**
+     * 将页面中的图片或视频 保存到用户的手机终端
+     * @param saveShareParam (@see ./param/SaveShareParam)
+     * @param userCallback
+    */</span>
+    <span class="token function">save</span><span class="token punctuation">(</span>saveShareParam<span class="token punctuation">,</span> userCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> callbackMethodFullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">&quot;save&quot;</span><span class="token punctuation">,</span> userCallback<span class="token punctuation">,</span> AppCommonResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;save&quot;</span><span class="token punctuation">,</span> saveShareParam<span class="token punctuation">,</span> callbackMethodFullName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h2 id="sharewithcallback"><a href="#sharewithcallback" aria-hidden="true" class="header-anchor">#</a> shareWithCallback</h2> <p>在app内调用保存图片和分享图片功能，调用方式<code>BridgeFactory.getBridge().shareWithCallback()</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+  * 将页面中的图片或视频 保存到用户的手机终端 并触发分享
+  * @param saveShareParam (@see ./param/SaveShareParam)
+  * @param sharePoppedCallback - app中分享面板弹出时触发 (关闭面板时可能会再次触发) callback
+  * @param shareMediaClickedCallback - app选择分享媒介时触发 callback (现阶段无效 ??)
+*/</span>
+<span class="token function">shareWithCallback</span><span class="token punctuation">(</span>saveShareParam<span class="token punctuation">,</span> sharePoppedCallback<span class="token punctuation">,</span> shareMediaClickedCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> sharePoppedCallbackName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">'sharePoppedCallback'</span><span class="token punctuation">,</span> sharePoppedCallback<span class="token punctuation">,</span> AppCommonResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> shareMediaClickedCallbackName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">'shareMediaClickedCallback'</span><span class="token punctuation">,</span> shareMediaClickedCallback<span class="token punctuation">,</span> AppCommonResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>saveShareParam<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    options<span class="token punctuation">.</span>clickShareButton <span class="token operator">=</span> shareMediaClickedCallbackName<span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;share&quot;</span><span class="token punctuation">,</span> options<span class="token punctuation">,</span> sharePoppedCallbackName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">提示</p> <p>在<code>param/SaveShareParam.js</code>中查看调用该方法时需要的参数设置。</p> <p><code>SaveShareParam()</code>方法为<code>save()</code>方法的进化版，不仅能保存图片还能分享。</p> <p>分享面板弹出一次的过程中 弹出和关闭都会触发此函数的回调函数</p></div> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> SaveShareParam <span class="token keyword">from</span> <span class="token string">&quot;@/common/bridge/param/SaveShareParam&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">handleSave</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> param <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SaveShareParam</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#distImg'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>src<span class="token punctuation">,</span> SaveShareParam<span class="token punctuation">.</span>types<span class="token punctuation">.</span>image<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> stat <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">//  初始一个变量 这次未统计</span>
+  bridgeFactory<span class="token punctuation">.</span><span class="token function">getBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">shareWithCallback</span><span class="token punctuation">(</span>param<span class="token punctuation">,</span> result <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>stat<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//  这样只统计一次</span>
+      <span class="token function">showToast</span><span class="token punctuation">(</span><span class="token string">'保存成功'</span><span class="token punctuation">)</span>
+      iosState <span class="token operator">=</span> <span class="token operator">!</span>iosState
+      <span class="token comment">// 百度统计方法</span>
+      _hmt<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'_trackEvent'</span><span class="token punctuation">,</span> eventCategory<span class="token operator">+</span> inState<span class="token punctuation">,</span> <span class="token string">'Btn'</span><span class="token punctuation">,</span> <span class="token string">'保存分享'</span> <span class="token operator">+</span> _years<span class="token punctuation">[</span>yearAct<span class="token punctuation">]</span><span class="token punctuation">.</span>imgTial<span class="token punctuation">[</span>_styleAct<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> res <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="调用相机和相册"><a href="#调用相机和相册" aria-hidden="true" class="header-anchor">#</a> 调用相机和相册</h2> <p>在B612咔叽APP内的H5页面有时候需要调用B612咔叽的相机和相册进行选择图片上传。</p> <p>在 <code>param/EventCameraParam.js</code>中查看调用相机或者相册 以及滤镜、分栏、贴纸、摄像头、表情的参数设置。</p> <p><code>eventCamera()</code>: 调用相机和相册</p> <p><code>eventCameraWithLandmarks()</code>: 获取的图片中带人脸坐标</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// *** 源码解析</span>
+<span class="token comment">/**
+  * 调用相机或相册功能 并将拍摄或获取的照片返回给页面.
+  * @param eventCameraParam : (@see ./param/EventCameraParam)
+  * @param userCallback
+*/</span>
+<span class="token comment">// ios</span>
+<span class="token function">eventCamera</span><span class="token punctuation">(</span>eventCameraParam<span class="token punctuation">,</span> userCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> callbackMethodFullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">&quot;eventCamera&quot;</span><span class="token punctuation">,</span> userCallback<span class="token punctuation">,</span>
+        CameraResult<span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">.</span>type<span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">.</span>cameraPosition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;eventCamera&quot;</span><span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">,</span> callbackMethodFullName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// eventCameraWithLandmarks 仅兼容app7.6.0以上</span>
+<span class="token comment">// 在android中 如果拍照非人脸 则无法触发回调函数 慎用！！</span>
+<span class="token comment">// （2018.11.21更新）android 版本7.9.3+ 已修复</span>
+<span class="token function">eventCameraWithLandmarks</span><span class="token punctuation">(</span>eventCameraParam<span class="token punctuation">,</span> userCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> callbackMethodFullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">&quot;eventCameraWithLandmarks&quot;</span><span class="token punctuation">,</span> userCallback<span class="token punctuation">,</span>
+        CameraResult<span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">.</span>type<span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">.</span>cameraPosition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;eventCameraWithLandmarks&quot;</span><span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">,</span> callbackMethodFullName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// android</span>
+<span class="token function">eventCamera</span><span class="token punctuation">(</span>eventCameraParam<span class="token punctuation">,</span> userCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// android 中注意 当前版本中 需要把categoryId、stickerId强制设置为undefined 不然调用时会出现卡死闪退的情况</span>
+    <span class="token comment">// 只使用 filterId即可</span>
+    <span class="token comment">// eventCameraWithLandmarks同理</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>BrowserChecker<span class="token punctuation">.</span><span class="token function">isAndroid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// eventCameraParam.filterId = undefined;</span>
+        eventCameraParam<span class="token punctuation">.</span>categoryId <span class="token operator">=</span> undefined<span class="token punctuation">;</span>
+        eventCameraParam<span class="token punctuation">.</span>stickerId <span class="token operator">=</span> undefined<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> callbackMethodFullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span>
+        <span class="token string">&quot;eventCamera&quot;</span><span class="token punctuation">,</span> userCallback<span class="token punctuation">,</span> EventCameraResult<span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">.</span>type<span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">.</span>cameraPosition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    native<span class="token punctuation">.</span><span class="token function">eventCamera</span><span class="token punctuation">(</span>callbackMethodFullName<span class="token punctuation">,</span> eventCameraParam<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+    
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// *** 使用案例</span>
+<span class="token keyword">import</span> EventCameraParam <span class="token keyword">from</span> <span class="token string">&quot;@/common/bridge/param/EventCameraParam&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 设置参数</span>
+<span class="token keyword">const</span> param <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventCameraParam</span><span class="token punctuation">(</span>
+    EventCameraParam<span class="token punctuation">.</span>types<span class="token punctuation">.</span>imageCamera<span class="token punctuation">,</span> <span class="token comment">// 字符串 imageCamera: 相机  imageAlbum： 相册</span>
+    EventCameraParam<span class="token punctuation">.</span>cameraPositions<span class="token punctuation">.</span>front<span class="token punctuation">,</span> <span class="token comment">// 前置摄像头 0  后置摄像头: 1</span>
+    comConfig<span class="token punctuation">.</span>filterId<span class="token punctuation">,</span> <span class="token comment">// 滤镜id</span>
+    comConfig<span class="token punctuation">.</span>categoryId<span class="token punctuation">,</span> <span class="token comment">// 分栏id (贴纸是在分栏里面的 所以app一般找贴纸先找到贴纸所在的分栏)</span>
+    comConfig<span class="token punctuation">.</span>stickerId<span class="token punctuation">,</span> <span class="token comment">// 贴纸id</span>
+    <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// 貌似是 音乐id</span>
+    <span class="token string">'true'</span> <span class="token comment">// 是否自动下载此贴纸  鸡肋 以后改为默认自动下载 (如咔叽里此贴纸未下载 则无法选中使用)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> galleryParams <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventCameraParam</span><span class="token punctuation">(</span>EventCameraParam<span class="token punctuation">.</span>types<span class="token punctuation">.</span>imageAlbum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#cameraBtn, #galleryBtn'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span> <span class="token comment">// 每次添加事件 先解除 否则多次添加事件会调用失败、异常</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#cameraBtn'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  bridgeFactory<span class="token punctuation">.</span><span class="token function">getBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">eventCamera</span><span class="token punctuation">(</span>param<span class="token punctuation">,</span> eventCameraCallback<span class="token punctuation">)</span>
+   _hmt<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'_trackEvent'</span><span class="token punctuation">,</span> eventCategory<span class="token operator">+</span> inState<span class="token punctuation">,</span> <span class="token string">'Btn'</span><span class="token punctuation">,</span> <span class="token string">'相机拍照'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#galleryBtn'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  bridgeFactory<span class="token punctuation">.</span><span class="token function">getBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">eventCamera</span><span class="token punctuation">(</span>galleryParams<span class="token punctuation">,</span> eventCameraCallback<span class="token punctuation">)</span>
+   _hmt<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'_trackEvent'</span><span class="token punctuation">,</span> eventCategory<span class="token operator">+</span> inState<span class="token punctuation">,</span> <span class="token string">'Btn'</span><span class="token punctuation">,</span> <span class="token string">'相册选取'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">提示</p> <p><code>eventCameraWithLandmarks()</code> 为更高级的接口,不仅能返回拍摄、选取的照片,
+如果拍摄、选取的是人物脸部 能够获取此照片的脸部坐标 一起返回给页面</p></div> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 获取脸部坐标的方法</span>
+<span class="token keyword">function</span> <span class="token function">eventCameraCallback</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">!</span>res<span class="token punctuation">.</span>success <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">const</span> imgSrc <span class="token operator">=</span> res<span class="token punctuation">.</span>base64Image
+   <span class="token keyword">const</span> landmark <span class="token operator">=</span> res<span class="token punctuation">.</span>landmarks <span class="token comment">// 如果有坐标 一起传给人脸融合接口 效果更佳</span>
+   <span class="token keyword">const</span> type <span class="token operator">=</span> type <span class="token comment">// 此次调用的是 相机还是相册</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="getcameraimage"><a href="#getcameraimage" aria-hidden="true" class="header-anchor">#</a> getCameraImage</h2> <p>在APP内拍照时的一些场景中，会遇到选择贴纸拍照后出现一个<code>confirmbanner 点击banner</code> 进入H5页面。那么进入h5页面后，能够获取到拍摄的照片</p> <p>该方法也区分是否需要人脸坐标</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * 场景: 用户先在app中使用某贴纸拍照 拍照完出现一个confirmbanner 点击banner 进入H5页面.
+ * 那么进入h5页面后 能够获取到拍摄的照片
+ * @param userCallback
+ */</span>
+<span class="token function">getCameraImage</span><span class="token punctuation">(</span>userCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> callbackMethodFullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">&quot;getCameraImage&quot;</span><span class="token punctuation">,</span> userCallback<span class="token punctuation">,</span> CameraResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;getCameraImage&quot;</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> callbackMethodFullName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">getCameraImageWithLandmarks</span><span class="token punctuation">(</span>userCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> callbackMethodFullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">&quot;getCameraImageWithLandmarks&quot;</span><span class="token punctuation">,</span> userCallback<span class="token punctuation">,</span> CameraResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;getCameraImageWithLandmarks&quot;</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> callbackMethodFullName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="calliosfunction"><a href="#calliosfunction" aria-hidden="true" class="header-anchor">#</a> _calliOSFunction</h2> <p>在IOS中的APP内置浏览器调取APP内提供的方法的联调方方法：<code>_calliOSFunction()</code>和 <code>_openCustomURLinIFrame()</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+  * ios 与app联动的原理
+  * (app scheme 决定使用的是beta 还是 real app)
+  *
+  * @param functionName - 与app约定的function name
+  * @param args - 传送参数对象 argument object
+  * @param sCallback - 在app中传出回调
+  * @private
+*/</span>
+<span class="token function">_calliOSFunction</span><span class="token punctuation">(</span>functionName<span class="token punctuation">,</span> args<span class="token punctuation">,</span> sCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> url <span class="token operator">=</span> ConfigFactory<span class="token punctuation">.</span>scheme <span class="token operator">+</span> <span class="token string">&quot;native/&quot;</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> callInfo <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    callInfo<span class="token punctuation">.</span>functionName <span class="token operator">=</span> functionName<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        callInfo<span class="token punctuation">.</span>success <span class="token operator">=</span> sCallback<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        callInfo<span class="token punctuation">.</span>args <span class="token operator">=</span> args<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    url <span class="token operator">+=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>callInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_openCustomURLinIFrame</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">_openCustomURLinIFrame</span><span class="token punctuation">(</span>src<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> rootElm <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> newFrameElm <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;IFRAME&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    newFrameElm<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;src&quot;</span><span class="token punctuation">,</span> src<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    rootElm<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>newFrameElm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    newFrameElm<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>newFrameElm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="login"><a href="#login" aria-hidden="true" class="header-anchor">#</a> login</h2> <p>APP内登陆账号的方法：<code>BridgeFactory.getBridge().login()</code></p> <p>仅app版本7.7.5以上支持</p> <p>beta版测试方法: <a href="http://qa.b612kaji.com/app-static/kaji/login-test/link.html" target="_blank" rel="noopener noreferrer">在手机web中打开以下链接，点击BETA按钮，即可进行测试<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="http://qa.b612kaji.com/app-static/kaji/login-test/link.html" target="_blank" rel="noopener noreferrer">http://qa.b612kaji.com/app-static/kaji/login-test/link.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 源码</span>
+<span class="token keyword">import</span> UserInfo <span class="token keyword">from</span> <span class="token string">&quot;./model/UserInfo&quot;</span><span class="token punctuation">;</span>
+<span class="token function">login</span><span class="token punctuation">(</span>userCallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> callbackMethodFullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_registerCallback</span><span class="token punctuation">(</span><span class="token string">&quot;login&quot;</span><span class="token punctuation">,</span> userCallback<span class="token punctuation">,</span> UserInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;login&quot;</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> callbackMethodFullName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><ol><li>InAppBrowser 启动时发送cookie</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ *产生token cookie 的条件:
+ *  1、 在kaji 内嵌游览器打开
+ *  2、 一级域名为 &quot;.snowcam.cn&quot;, &quot;.b612kaji.com&quot;, &quot;.yiruikecorp.com&quot;
+ *  3、在pc端打开 一般的document.cookie 为 Hm_lvt_c78ba600..... ; Hm_lpvt_c78ba60....; 或空
+ *  4、在app内 document.cookie 有一个(第一种sessionKey) 为 B6_SES=oOIUgm.....
+ */</span>
+bridge<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span>userInfo <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>userInfo<span class="token punctuation">.</span><span class="token constant">B6_SES</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//  跟第一种sessionKey很像 为登录准备的变体 这是第二种sessionKey</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><ol start="2"><li>Click按钮 -&gt; 调起 jsBridge.login() function</li> <li>登录成功后，输出通过callback 发送的session key  (userInfo.B6_SES 第二种sessionKey)</li> <li>session key -&gt; API SERVER -&gt; user 信息查询 (通过userInfo.B6_SES 发送ajax请求获取用户信息)</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> sessionKey <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;=&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+<span class="token comment">//var sessionKey = &quot;N9CtB4ZZOfEjGCk9i4le0oO4StKZrGBgW2l+lQQIjBboQmKQmWlYN3BRtLXfrpOCxFC7wQtYXHdIIYOw6+Itwyh25rv2reM93aXWEMGaEdI=&quot;;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sessionKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> url <span class="token operator">=</span> <span class="token string">&quot;http://qa-api.b612kaji.com/v2/user/me&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// var url = &quot;http://api.b612kaji.com/v2/user/me&quot;; // real</span>
+$<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  url <span class="token punctuation">:</span> url<span class="token punctuation">,</span>
+  dataType<span class="token punctuation">:</span> <span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span>
+  headers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'Authorization'</span><span class="token punctuation">:</span> <span class="token string">'Bearer '</span> <span class="token operator">+</span> sessionKey <span class="token comment">// 这里用的是第一种sessionKey</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  success <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="close"><a href="#close" aria-hidden="true" class="header-anchor">#</a> close</h2> <p>在APP的浏览器h5页面中<code>触发页面关闭webView</code>的方法。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// *** 源码解析</span>
+<span class="token comment">// android中的调用方法:</span>
+<span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    native<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// ios 中的调用方法</span>
+<span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_calliOSFunction</span><span class="token punctuation">(</span><span class="token string">&quot;close&quot;</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+    
+ <span class="token comment">// 页面中调用案例</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.exit button'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    BridgeFactory<span class="token punctuation">.</span><span class="token function">getBridge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="uuid"><a href="#uuid" aria-hidden="true" class="header-anchor">#</a> uuid</h2> <p>在APP内部浏览器中请求page时，把URL的 {ad_did}部分转换为uuid的功能，B612咔叽在7.3.0版本以上支持。</p> <div class="tip custom-block"><p class="custom-block-title">提示</p> <p>uuid获取是用页面url的部分参数转换的方式，外部浏览器也可模仿这个参数，会有滥用的问题。</p> <blockquote></blockquote> <p>建议仅支持在inAppBrowser时使用 （jsBridge的 appInfo 来判断是否为inAppBrowser打开）</p></div> <div class="language-js extra-class"><pre class="language-js"><code>  http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>qa<span class="token punctuation">.</span>b612kaji<span class="token punctuation">.</span>com<span class="token operator">/</span>test<span class="token operator">/</span>test_uuid<span class="token punctuation">.</span>html<span class="token operator">?</span>uuid<span class="token operator">=</span><span class="token punctuation">{</span>ad_did<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">&quot;b612cnb://inappBrowser?url=http%3A%2F%2Fqa.b612kaji.com%2Ftest%2Ftest_uuid.html%3Fuuid%3D%7Bad_did%7D&quot;</span><span class="token operator">&gt;</span><span class="token constant">UUID</span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/blog/b612/h5.html">
+          H5活动配置参数日志
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.469c32d7.js" defer></script><script src="/assets/js/5.8984cee8.js" defer></script>
+  </body>
+</html>
