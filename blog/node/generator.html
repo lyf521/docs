@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Express 应用生成器 | 华丽转身</title>
+    <meta name="description" content="项目规范，书写约束">
+    
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.e0bfcbc0.css" as="style"><link rel="preload" href="/docs/assets/js/app.b8553069.js" as="script"><link rel="preload" href="/docs/assets/js/13.e81c291a.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.b4e76afa.js"><link rel="prefetch" href="/docs/assets/js/11.91e302e7.js"><link rel="prefetch" href="/docs/assets/js/12.bea6a867.js"><link rel="prefetch" href="/docs/assets/js/14.e64ffd81.js"><link rel="prefetch" href="/docs/assets/js/2.1a3627a8.js"><link rel="prefetch" href="/docs/assets/js/3.f453878d.js"><link rel="prefetch" href="/docs/assets/js/4.48bacc43.js"><link rel="prefetch" href="/docs/assets/js/5.8984cee8.js"><link rel="prefetch" href="/docs/assets/js/6.d8f83c79.js"><link rel="prefetch" href="/docs/assets/js/7.eab42ca7.js"><link rel="prefetch" href="/docs/assets/js/8.a1b2e721.js"><link rel="prefetch" href="/docs/assets/js/9.9650b750.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.e0bfcbc0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">华丽转身</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/blog/b612/default.html" class="nav-link">B612</a></li><li class="dropdown-item"><!----> <a href="/docs/blog/node/" class="nav-link router-link-active">Node</a></li><li class="dropdown-item"><!----> <a href="/docs/blog/js/" class="nav-link">JS</a></li></ul></div></div><div class="nav-item"><a href="/docs/blog/node/.html" class="nav-link"></a></div><div class="nav-item"><a href="https://github.com/lyf521" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://gitee.com/lee521" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/blog/b612/default.html" class="nav-link">B612</a></li><li class="dropdown-item"><!----> <a href="/docs/blog/node/" class="nav-link router-link-active">Node</a></li><li class="dropdown-item"><!----> <a href="/docs/blog/js/" class="nav-link">JS</a></li></ul></div></div><div class="nav-item"><a href="/docs/blog/node/.html" class="nav-link"></a></div><div class="nav-item"><a href="https://github.com/lyf521" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://gitee.com/lee521" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Node</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/docs/blog/node/" class="sidebar-link">express框架</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span></span> <!----></p> <ul class="sidebar-group-items"><li><a href="/docs/blog/node/generator.html" class="active sidebar-link">Express 应用生成器</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="express-应用生成器"><a href="#express-应用生成器" aria-hidden="true" class="header-anchor">#</a> Express 应用生成器</h1> <div class="warning custom-block"><p class="custom-block-title">提示</p> <p>通过Express应用生成器创建应用只是众多方法中的一种.你可以不使用它,也可以修改它让它符合你的需求.</p></div> <p>通过应用生成器工具exoress-generator可以快速创建一个应用的骨架.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 全局安装express-generator</span>
+npm install express<span class="token operator">-</span>generator <span class="token operator">-</span>g
+</code></pre></div><p>-h 参数可以列出所有可用的命令行参数:</p> <div class="language-js extra-class"><pre class="language-js"><code>$ express <span class="token operator">-</span>h
+
+  Usage<span class="token punctuation">:</span> express <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>dir<span class="token punctuation">]</span>
+
+  Options<span class="token punctuation">:</span>
+
+    <span class="token operator">-</span>h<span class="token punctuation">,</span> <span class="token operator">--</span>help          输出使用方法
+        <span class="token operator">--</span>version       输出版本号
+    <span class="token operator">-</span>e<span class="token punctuation">,</span> <span class="token operator">--</span>ejs           添加对 ejs 模板引擎的支持
+        <span class="token operator">--</span>hbs           添加对 handlebars 模板引擎的支持
+        <span class="token operator">--</span>pug           添加对 pug 模板引擎的支持
+    <span class="token operator">-</span><span class="token constant">H</span><span class="token punctuation">,</span> <span class="token operator">--</span>hogan         添加对 hogan<span class="token punctuation">.</span>js 模板引擎的支持
+        <span class="token operator">--</span>no<span class="token operator">-</span>view       创建不带视图引擎的项目
+    <span class="token operator">-</span>v<span class="token punctuation">,</span> <span class="token operator">--</span>view <span class="token operator">&lt;</span>engine<span class="token operator">&gt;</span> 添加对视图引擎（view） <span class="token operator">&lt;</span>engine<span class="token operator">&gt;</span> <span class="token function">的支持</span> <span class="token punctuation">(</span>ejs<span class="token operator">|</span>hbs<span class="token operator">|</span>hjs<span class="token operator">|</span>jade<span class="token operator">|</span>pug<span class="token operator">|</span>twig<span class="token operator">|</span>vash<span class="token punctuation">)</span> （默认是 jade 模板引擎）
+    <span class="token operator">-</span>c<span class="token punctuation">,</span> <span class="token operator">--</span>css <span class="token operator">&lt;</span>engine<span class="token operator">&gt;</span>  添加样式表引擎 <span class="token operator">&lt;</span>engine<span class="token operator">&gt;</span> <span class="token function">的支持</span> <span class="token punctuation">(</span>less<span class="token operator">|</span>stylus<span class="token operator">|</span>compass<span class="token operator">|</span>sass<span class="token punctuation">)</span> （默认是普通的 css 文件）
+        <span class="token operator">--</span>git           添加 <span class="token punctuation">.</span>gitignore
+    <span class="token operator">-</span>f<span class="token punctuation">,</span> <span class="token operator">--</span>force         强制在非空目录下创建
+
+Pug原名不叫Pug，是大名鼎鼎的jade，后来由于商标的原因，改为Pug，哈巴狗。其实只是换个名字，语法都与jade一样。
+</code></pre></div><p>例如,如下命令创建了一个名称为myapp 的Express应用.此应用将在当前目录下的myapp目录中创建,并且设置为使用 <a href="https://www.cnblogs.com/xiaohuochai/p/7222227.html#anchor15" target="_blank" rel="noopener noreferrer">Pug<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 模板引擎（view engine）：</p> <div class="language-js extra-class"><pre class="language-js"><code>$ express <span class="token operator">--</span>view<span class="token operator">=</span>pug myapp
+
+   create <span class="token punctuation">:</span> myapp
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span><span class="token keyword">package</span><span class="token punctuation">.</span>json
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>app<span class="token punctuation">.</span>js
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span><span class="token keyword">public</span>
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">/</span>javascripts
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">/</span>images
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>routes
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>routes<span class="token operator">/</span>index<span class="token punctuation">.</span>js
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>routes<span class="token operator">/</span>users<span class="token punctuation">.</span>js
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">/</span>stylesheets
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">/</span>stylesheets<span class="token operator">/</span>style<span class="token punctuation">.</span>css
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>views
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>views<span class="token operator">/</span>index<span class="token punctuation">.</span>pug
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>views<span class="token operator">/</span>layout<span class="token punctuation">.</span>pug
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>views<span class="token operator">/</span>error<span class="token punctuation">.</span>pug
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>bin
+   create <span class="token punctuation">:</span> myapp<span class="token operator">/</span>bin<span class="token operator">/</span>www
+</code></pre></div><p>然后安装所有依赖包:</p> <div class="language-js extra-class"><pre class="language-js"><code>$ cd myapp
+$ npm install
+</code></pre></div><p>在MacOS 或 Linux 中,通过如下命令启动此应用:</p> <div class="language-js extra-class"><pre class="language-js"><code>$ <span class="token constant">DEBUG</span><span class="token operator">=</span>myapp<span class="token punctuation">:</span><span class="token operator">*</span> npm start
+</code></pre></div><p>在Windows中,通过如下命令启动此应用:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&gt;</span> <span class="token keyword">set</span> <span class="token constant">DEBUG</span><span class="token operator">=</span>myapp<span class="token punctuation">:</span><span class="token operator">*</span> <span class="token operator">&amp;</span> npm start
+</code></pre></div><p>然后在浏览器中打开http://localhost:3000/ 网址就可以看到这个应用了.</p> <p>通过生成器创建的应用一般都有如下目录结构:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">.</span>
+├── app<span class="token punctuation">.</span>js
+├── bin
+│   └── www
+├── <span class="token keyword">package</span><span class="token punctuation">.</span>json
+├── <span class="token keyword">public</span>
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+│       └── style<span class="token punctuation">.</span>css
+├── routes
+│   ├── index<span class="token punctuation">.</span>js
+│   └── users<span class="token punctuation">.</span>js
+└── views
+    ├── error<span class="token punctuation">.</span>pug
+    ├── index<span class="token punctuation">.</span>pug
+    └── layout<span class="token punctuation">.</span>pug
+
+<span class="token number">7</span> directories<span class="token punctuation">,</span> <span class="token number">9</span> files
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/blog/node/" class="prev router-link-active">
+          express框架
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/docs/assets/js/app.b8553069.js" defer></script><script src="/docs/assets/js/13.e81c291a.js" defer></script>
+  </body>
+</html>
