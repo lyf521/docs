@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用CSS3实现圆形进度条</title>
+  <style>
+  .circle_process{
+    position: relative;
+    width: 199px;
+    height: 200px;
+  }
+  .circle_process .wrapper{
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+  }
+  .circle_process .right{
+    right: 0;
+  }
+  .circle_process .left{
+    left: 0;
+  }
+  .circle_process .circle{
+    width: 160px;
+    height: 160px;
+    border: 20px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    transform: rotate(-135deg);
+  }
+  .circle_process #show{
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    line-height: 200px;
+  }
+  .circle_process .rightcircle{
+    border-top: 20px solid red;
+    border-right: 20px solid red;
+    right: 0;
+    /* -webkit-animation: circle_right 5s linear infinite; */
+  }
+  .circle_process .leftcircle{
+    border-bottom: 20px solid red;
+    border-left: 20px solid red;
+    left: 0;
+    opacity: 0;
+    /* -webkit-animation: circle_left 5s linear infinite; */
+  }
+  @-webkit-keyframes circle_right{
+    0%{
+      -webkit-transform: rotate(-135deg);
+    }
+    50%,100%{
+      -webkit-transform: rotate(45deg);
+    }
+  }
+  @-webkit-keyframes circle_left{
+    0%,49%{
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+      -webkit-transform: rotate(-135deg);
+    }
+    100%{
+      opacity: 1;
+      -webkit-transform: rotate(45deg);
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="circle_process">
+    <div id="show"></div>
+    <div class="wrapper right">
+      <div class="circle rightcircle" id="rightcircle"></div>
+    </div>
+    <div class="wrapper left">
+      <div class="circle leftcircle" id="leftcircle"></div>
+    </div>
+  </div>
+</body>
+<script>
+  var rightcircle = document.getElementById('rightcircle')
+  var leftcircle = document.getElementById('leftcircle')
+  var show = document.getElementById('show')
+  function getTime() {
+    var data = new Date()
+    var second = data.getSeconds()
+
+    show.innerHTML = second
+
+    if (second <= 30) {
+      rightcircle.style.cssText = 'transform: rotate(' + (-135+6*second) + 'deg)'
+      leftcircle.style.cssText = 'transform: rotate(-135deg)'
+    } else {
+      rightcircle.style.cssText = 'transform: rotate(45deg)'
+      leftcircle.style.cssText = 'transform: rotate(' + (-135+6*(second-30)) + 'deg);opacity:1'
+    }
+  }
+
+  getTime();
+  setInterval(function(){
+    getTime()
+  }, 1000)
+</script>
+</html>
