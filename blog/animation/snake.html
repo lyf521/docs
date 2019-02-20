@@ -51,8 +51,9 @@
             // 从0到399表示box里 [0-19]*[0-19]的所有节点，每20px一个节点
 
         var drawW = document.getElementById('box').offsetWidth
-        document.getElementById('can').width = drawW
-        document.getElementById('can').height = drawW
+        document.getElementById('can').width = drawW*2
+        document.getElementById('can').height = drawW*2
+        box.scale(2,2)
         var width = drawW
         var itemW = width/20
 
