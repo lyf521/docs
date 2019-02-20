@@ -29,7 +29,7 @@
 <script>
    !function(e,t){var n=e.documentElement,i="orientationchange"in window?"orientationchange":"resize",d=(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream,function(){var t=n.clientWidth;t&&(t>=640?(t=640,e.body.style.width="640px"):e.body.style.width=t+"px",n.style.fontSize=100*(t/750)+"px",n.dataset.width=t,n.dataset.percent=100*(t/750))});d(),e.documentElement.classList.add("iosx"+t.devicePixelRatio),e.addEventListener&&t.addEventListener(i,d,!1)}(document,window)
 </script>
-    <div class="canvas">
+    <div class="canvas" id="box">
         <canvas id="can" style="background-color: black">对不起，您的浏览器不支持canvas</canvas>
     </div>
     <h4>也可以键盘上下左右键控制</h4>
@@ -45,24 +45,27 @@
 
         var snake = [41, 40],   // snake队列表示蛇身，初始节点存在但是不显示
           direction = 1,    // 1 - 向右， -1 - 向左， 20 - 向下， -20 - 向上
-          food = 43,    // 食物的位置
+          food = 48,    // 食物的位置
           n,    // 与下次移动的位置有关
           box = document.getElementById('can').getContext('2d');
             // 从0到399表示box里 [0-19]*[0-19]的所有节点，每20px一个节点
 
-        var width = document.getElementById('can').offsetWidth
+        var drawW = document.getElementById('box').offsetWidth
+        document.getElementById('can').width = drawW
+        document.getElementById('can').height = drawW
+        var width = drawW
         var itemW = width/20
 
         function draw(seat, color) {
            box.fillStyle = color;
-           box.fillRect(seat % itemW * itemW + 1, ~~(seat / itemW) * itemW +1, (itemW-1), (itemW-1))  // ~~对一个浮点型的数取反再取反，得到的数就是去掉小数位的整数了
+           box.fillRect(seat % 20 * itemW + 1, ~~(seat / 20) * itemW +1, (itemW-1), (itemW-1))  // ~~对一个浮点型的数取反再取反，得到的数就是去掉小数位的整数了
            //用color填充一个矩形，以前两个参数为x，y坐标，后两个参数为宽和高
         }
 
         document.onkeydown = function (evt) {
             //当键盘上下左右键摁下的时候改变direction
            // 键值 左 - 37 ，右 - 39， 上 - 38， 下 - 40
-           direction = snake[1] - snake[0] == (n = [-1, -itemW, 1, itemW][(evt || event).keyCode - 37] || direction) ? direction : n;
+           direction = snake[1] - snake[0] == (n = [-1, -20, 1, 20][(evt || event).keyCode - 37] || direction) ? direction : n;
         }
         function btnEvent(val) {
            direction = snake[1] - snake[0] == (n = [-1, -itemW, 1, itemW][val - 37] || direction) ? direction : n;
@@ -74,8 +77,8 @@
         !function () {
            // 此时的n为下次蛇头出现的位置，n进入队列
            snake.unshift(n = snake[0] + direction);
-
-           if (snake.indexOf(n, 1) > 0 || n < 0 || n > (width-1) || direction == 1 && n % itemW == 0 || direction == -1 && n % itemW == (itemW-1)){
+           console.log(n)
+           if (snake.indexOf(n, 1) > 0 || n < 0 || n > 399 || direction == 1 && n % 20 == 0 || direction == -1 && n % 20 == 19){
               // if 语句判断贪吃蛇是否撞到自己或者墙壁，碰到时返回，结束程序
               return alert('GAME OVER - 游戏结束!')
            }

@@ -22,25 +22,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="4" />
+          <entry key="html" value="5" />
           <entry key="js" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="JavaScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="911" />
+          <entry key="html" value="1094" />
           <entry key="js" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="911" />
+          <entry key="HTML" value="1094" />
           <entry key="JavaScript" value="13" />
         </counts>
       </usages-collector>
@@ -78,8 +78,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snake.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="269">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/animation/demo/snake.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -103,6 +112,7 @@
         <option value="$PROJECT_DIR$/rabbit.html" />
         <option value="$PROJECT_DIR$/demo.html" />
         <option value="$PROJECT_DIR$/meteorshower.html" />
+        <option value="$USER_HOME$/Desktop/animation/demo/snake.html" />
         <option value="$PROJECT_DIR$/snake.html" />
       </list>
     </option>
@@ -176,12 +186,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550574409601</updated>
       <workItem from="1550574410791" duration="1152000" />
-      <workItem from="1550628271366" duration="4076000" />
+      <workItem from="1550628271366" duration="7064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5228000" />
+    <option name="totallyTimeSpent" value="8216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="29" y="33" width="1347" height="803" extended-state="0" />
@@ -243,10 +253,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/animation/demo/snake.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/snake.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="269">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
