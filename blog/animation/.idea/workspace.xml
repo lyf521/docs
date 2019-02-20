@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14769bd-f5b7-464d-8e1e-32f34ac65e78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake.html" beforeDir="false" afterPath="$PROJECT_DIR$/snake.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,13 +34,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="669" />
+          <entry key="html" value="911" />
           <entry key="js" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="669" />
+          <entry key="HTML" value="911" />
           <entry key="JavaScript" value="13" />
         </counts>
       </usages-collector>
@@ -79,11 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snake.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-              <folding>
-                <element signature="e#2391#3272#0" />
-              </folding>
+            <state relative-caret-position="191">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
@@ -180,12 +176,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550574409601</updated>
       <workItem from="1550574410791" duration="1152000" />
-      <workItem from="1550628271366" duration="1873000" />
+      <workItem from="1550628271366" duration="4076000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3025000" />
+    <option name="totallyTimeSpent" value="5228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="29" y="33" width="1347" height="803" extended-state="0" />
@@ -249,11 +245,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/snake.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-          <folding>
-            <element signature="e#2391#3272#0" />
-          </folding>
+        <state relative-caret-position="191">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>

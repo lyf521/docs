@@ -2,28 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no">
     <title>贪吃蛇</title>
     <style>
         body{
-            width: 100%;
+            width: 7.5rem;
             height: 100vh;
             margin: 0;
             padding: 0;
             text-align: center;
+            font-size: 0.28rem;
         }
-        .canvas{width:400px;margin: 0 auto;}
-        .direction{width: 200px;height:200px;background: #cccccc;margin: 20px auto;position: relative;}
-        button{width: 60px;height: 40px;position: absolute}
-        button:first-child{left:70px;top:20px;}
-        button:nth-child(2){left:10px;top:80px;}
-        button:nth-child(3){right: 10px;top:80px;}
-        button:nth-child(4){left: 70px;bottom: 20px;}
-        .start{width: 80px;height: 30px;margin: 30px auto;background: red;line-height: 30px;border-radius: 5px;color: #ffffff;}
+        .canvas{width:6rem;height:6rem;margin: 0 auto;}
+        .canvas canvas{width:6rem;height:6rem;}
+        .direction{width: 4rem;height:4rem;background: #cccccc;margin: .2rem auto;position: relative;}
+        button{width: 1.2rem;height: .6rem;position: absolute;background: #ffffff;display: block;}
+        button:first-child{left:1.4rem;top:.4rem;}
+        button:nth-child(2){left:.2rem;top:1.7rem;}
+        button:nth-child(3){right: .2rem;top:1.7rem;}
+        button:nth-child(4){left: 1.4rem;bottom: .4rem;}
+        .start{width: 1.6rem;height: .6rem;margin: .6rem auto;background: red;line-height: .6rem;border-radius: 5px;color: #ffffff;}
     </style>
+
 </head>
 <body>
+<script>
+   !function(e,t){var n=e.documentElement,i="orientationchange"in window?"orientationchange":"resize",d=(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream,function(){var t=n.clientWidth;t&&(t>=640?(t=640,e.body.style.width="640px"):e.body.style.width=t+"px",n.style.fontSize=100*(t/750)+"px",n.dataset.width=t,n.dataset.percent=100*(t/750))});d(),e.documentElement.classList.add("iosx"+t.devicePixelRatio),e.addEventListener&&t.addEventListener(i,d,!1)}(document,window)
+</script>
     <div class="canvas">
-        <canvas id="can" width="400" height="400" style="background-color: black">对不起，您的浏览器不支持canvas</canvas>
+        <canvas id="can" style="background-color: black">对不起，您的浏览器不支持canvas</canvas>
     </div>
     <h4>也可以键盘上下左右键控制</h4>
     <div class="direction">
@@ -43,19 +50,22 @@
           box = document.getElementById('can').getContext('2d');
             // 从0到399表示box里 [0-19]*[0-19]的所有节点，每20px一个节点
 
+        var width = document.getElementById('can').offsetWidth
+        var itemW = width/20
+
         function draw(seat, color) {
            box.fillStyle = color;
-           box.fillRect(seat % 20 * 20 + 1, ~~(seat / 20) * 20 +1, 18, 18)  // ~~对一个浮点型的数取反再取反，得到的数就是去掉小数位的整数了
+           box.fillRect(seat % itemW * itemW + 1, ~~(seat / itemW) * itemW +1, (itemW-1), (itemW-1))  // ~~对一个浮点型的数取反再取反，得到的数就是去掉小数位的整数了
            //用color填充一个矩形，以前两个参数为x，y坐标，后两个参数为宽和高
         }
 
         document.onkeydown = function (evt) {
             //当键盘上下左右键摁下的时候改变direction
            // 键值 左 - 37 ，右 - 39， 上 - 38， 下 - 40
-           direction = snake[1] - snake[0] == (n = [-1, -20, 1, 20][(evt || event).keyCode - 37] || direction) ? direction : n;
+           direction = snake[1] - snake[0] == (n = [-1, -itemW, 1, itemW][(evt || event).keyCode - 37] || direction) ? direction : n;
         }
         function btnEvent(val) {
-           direction = snake[1] - snake[0] == (n = [-1, -20, 1, 20][val - 37] || direction) ? direction : n;
+           direction = snake[1] - snake[0] == (n = [-1, -itemW, 1, itemW][val - 37] || direction) ? direction : n;
         }
 
         function start() {
@@ -65,7 +75,7 @@
            // 此时的n为下次蛇头出现的位置，n进入队列
            snake.unshift(n = snake[0] + direction);
 
-           if (snake.indexOf(n, 1) > 0 || n < 0 || n > 399 || direction == 1 && n % 20 == 0 || direction == -1 && n % 20 == 19){
+           if (snake.indexOf(n, 1) > 0 || n < 0 || n > (width-1) || direction == 1 && n % itemW == 0 || direction == -1 && n % itemW == (itemW-1)){
               // if 语句判断贪吃蛇是否撞到自己或者墙壁，碰到时返回，结束程序
               return alert('GAME OVER - 游戏结束!')
            }
@@ -74,7 +84,7 @@
 
            if(n == food) {
               // 如果吃到食物，产生一个蛇身以外的随机的点，不会去掉蛇尾
-              while (snake.indexOf(food = ~~(Math.random() * 400)) > 0);
+              while (snake.indexOf(food = ~~(Math.random() * width)) > 0);
               draw(food, 'yellow')
            } else {
               // 没有吃到食物继续移动，蛇尾出队列
