@@ -33,7 +33,22 @@
     top: 0;
     transform: rotate(-135deg);
   }
-  .circle_process #show{
+  
+  .circle_process .rightcircle{
+    border-top: 20px solid red;
+    border-right: 20px solid red;
+    right: 0;
+    -webkit-animation: circle_right 5s linear infinite;
+  }
+  .circle_process .leftcircle{
+    border-bottom: 20px solid red;
+    border-left: 20px solid red;
+    left: 0;
+    opacity: 0;
+    -webkit-animation: circle_left 5s linear infinite;
+  }
+
+  .circle_process .show{
     width: 200px;
     height: 200px;
     font-size: 30px;
@@ -43,13 +58,13 @@
     text-align: center;
     line-height: 200px;
   }
-  .circle_process .rightcircle{
+  .circle_process #rightcircle{
     border-top: 20px solid red;
     border-right: 20px solid red;
     right: 0;
     /* -webkit-animation: circle_right 5s linear infinite; */
   }
-  .circle_process .leftcircle{
+  .circle_process #leftcircle{
     border-bottom: 20px solid red;
     border-left: 20px solid red;
     left: 0;
@@ -81,12 +96,20 @@
 </head>
 <body>
   <div class="circle_process">
-    <div id="show"></div>
     <div class="wrapper right">
-      <div class="circle rightcircle" id="rightcircle"></div>
+      <div class="circle rightcircle"></div>
     </div>
     <div class="wrapper left">
-      <div class="circle leftcircle" id="leftcircle"></div>
+      <div class="circle leftcircle"></div>
+    </div>
+  </div>
+  <div class="circle_process">
+    <div class="show" id="show"></div>
+    <div class="wrapper right">
+      <div class="circle" id="rightcircle"></div>
+    </div>
+    <div class="wrapper left">
+      <div class="circle" id="leftcircle"></div>
     </div>
   </div>
 </body>

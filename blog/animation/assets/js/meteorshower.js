@@ -26,7 +26,7 @@ class ShootingStar {
     this.pass = 0 // 已过去的时间
     this.prev = this.init.copy() // 上一帧位置
     this.now = this.init.copy() // 当前位置
-    this.onDistory = onDistory
+    this.onDistory = onDistory // callback参数
   }
 
    /**
@@ -112,12 +112,12 @@ class MeteorShower {
 
   // 采用requestAnimationFrame() 画帧动画，设定帧时间
   tick() {
-    if (this.playing) return
+    if (this.playing) return // 判定是否在执行当中,不可多重执行
     this.playing = true
 
     let now = (new Date()).getTime()
     let last = now
-    let delta
+    let delta // 时间间隔
 
     let _tick = () => {
       if (this.stop && this.stars.length === 0) {
@@ -126,6 +126,7 @@ class MeteorShower {
         return
       }
 
+      // 获取帧时间,30到16之间
       delta = now - last
       delta = delta > 500 ? 30 : (delta < 16 ? 16: delta)
       last = now
