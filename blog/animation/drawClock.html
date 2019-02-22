@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>canva画时钟</title>
+</head>
+<body>
+  <h4>格子时钟(利用canvas的translate、rotate 以某坐标画旋转后的直线位置)</h4>
+  <canvas id="clock" width="500" height="500" style="background:greenyellow;margin: 50px auto;display:block;">您的浏览器当前版本不支持canvas标签</canvas>
+  <h4>数字时钟(利用数学向量计算坐标旋转后的 坐标点)</h4>
+  <canvas id="draw" width="500" height="500" style="background:greenyellow;margin: 50px auto;display:block;">您的浏览器当前版本不支持canvas标签</canvas>
+</body>
+<!-- canvas画点圆线段,旋转 -->
+<script>
+  class drawline{
+    constructor(num = 1, xy = [250, 250] ){
+      this.num = num
+      this.xy = xy
+    }
+    draw ( deg, width, move, line,color = '#000') {
+      cxt.save()  // 设置旋转环境,保存状态
+      cxt.lineWidth = width
+      cxt.strokeStyle = color
+
+      cxt.translate(this.xy[0], this.xy[1]) // 设置异次元空间的原点(250,250)相当于变为(0,0)
+      cxt.rotate(this.num * deg * Math.PI/180) // 设置旋转角度30deg
+
+      cxt.beginPath() //画笔开始
+      cxt.moveTo(move[0], move[1]) // 画线,从坐标0,-170开始
+      cxt.lineTo(line[0],line[1]) // 到坐标0,-190结束
+
+      cxt.stroke() // 画图
+      cxt.closePath()
+      cxt.restore() //将旋转后的元素放回原画布, 恢复初始状态
+    }
+  }
+  var canvas = document.getElementById('clock')
+  var cxt = canvas.getContext('2d')
+
+  function drawClock(){
+    cxt.clearRect(0,0,500,500) //清除画布
+    var now = new Date()
+    var sec = now.getSeconds()
+    var minute = now.getMinutes()
+    var hour = now.getHours()
+
+    hour = hour + minute/60 // 小时必须获取浮点类型,产生偏移(小时+分钟比)
+    hour = hour > 12 ? (hour-12) : hour
+
+    // 画圆
+    cxt.beginPath() // 画笔开始
+    cxt.lineWidth = 5 //设置画笔的线宽
+    cxt.strokeStyle = 'blue' // 设置画笔的颜色
+
+    cxt.arc(250, 250, 200, 0, 360, false) // 画圆,坐标250,250 半径200 整圆(0-360度) false表示顺时针
+    cxt.stroke() // 画图
+    cxt.closePath() // 结束画布
+
+    // 分针刻度
+    for(var i = 0; i < 60; i++){
+      cxt.save()
+      cxt.lineWidth = 5
+      cxt.strokeStyle = '#333'
+
+      cxt.translate(250,250)
+      cxt.rotate(i*6*Math.PI/180)
+
+      cxt.beginPath()
+      cxt.moveTo(0,-180)
+      cxt.lineTo(0,-190)
+
+      cxt.stroke()
+      cxt.closePath()
+      cxt.restore()
+    }
+    // 绕圆圈画线段 -- 时钟刻度
+    for(var i = 0; i < 12; i++) {
+      cxt.save()  // 设置旋转环境
+      cxt.lineWidth = 7
+      cxt.strokeStyle = '#000'
+
+      cxt.translate(250, 250) // 设置异次元空间的原点(250,250)相当于变为(0,0)
+      cxt.rotate(i*30*Math.PI/180) // 设置旋转角度30deg
+
+      cxt.beginPath() //画笔开始
+      cxt.moveTo(0, -170) // 画线,从坐标0,-170开始
+      cxt.lineTo(0,-190) // 到坐标0,-190结束
+
+      cxt.stroke() // 画图
+      cxt.closePath()
+      cxt.restore() //将旋转后的元素放回原画布
+    }
+
+    // 画时针
+    new drawline(hour).draw(30,7,[0,-140],[0,10])
+    // 画分针
+    new drawline(minute).draw(6, 5, [0,-160],[0,15])
+    // 画秒针
+    cxt.save()
+    cxt.lineWidth = 3
+    cxt.strokeStyle = '#f00'
+    cxt.fillStyle = '#fff'
+    cxt.translate(250,250)
+    cxt.rotate(sec * 6 * Math.PI/180)
+
+    cxt.beginPath()
+    cxt.moveTo(0,-185)
+    cxt.lineTo(0,20)
+    cxt.stroke()
+    cxt.closePath()
+    // 画出时针,分针,秒针交叉点
+    cxt.beginPath()
+    cxt.arc(0,0,5,0,360,false)
+    cxt.fill()
+    cxt.stroke()
+    cxt.closePath()
+    // 秒针装饰
+    cxt.beginPath()
+    cxt.arc(0,-160,5,0,360,false)
+    cxt.fill()
+    cxt.stroke()
+    cxt.closePath()
+    cxt.restore()
+  }
+  drawClock()
+  setInterval(drawClock,1000)
+</script>
+<script>
+  // 在canvas xy坐标系中, 某坐标饶某点旋转后的 坐标
+  class CountNexPos{
+    constructor (center = [250,250]){
+      this.center = center
+    }
+    NexPos(curPos,theta){ // curPos:[x1,y1], theta: 角度值
+      theta = theta / 180 * Math.PI // 角度值转换为 旋转的度数
+      var nexPos = []
+      nexPos[0] = (curPos[0] - this.center[0])*Math.cos(theta) - (curPos[1] - this.center[1]) * Math.sin(theta) + this.center[0]
+      nexPos[1] = (curPos[0] - this.center[0])*Math.sin(theta) + (curPos[1] - this.center[1]) * Math.cos(theta) + this.center[1]
+      return nexPos
+    }
+  }
+  // 画数字表盘
+  class Clock extends CountNexPos {
+    constructor (innerRad = 200, outerRad = 220, center = [250,250]){
+      super(center)
+
+      this.innerRad = innerRad
+      this.outerRad = outerRad
+    }
+    setClock (ctx) {
+      // 内圆
+      ctx.lineWidth = 1
+      ctx.beginPath()
+      ctx.arc(this.center[0],this.center[1],this.innerRad, 0, 2*Math.PI, false)
+      ctx.stroke()
+      ctx.closePath()
+      // 外圆
+      ctx.lineWidth = 18
+      ctx.beginPath()
+      ctx.arc(this.center[0],this.center[1],this.outerRad, 0, 2*Math.PI, false)
+      ctx.stroke()
+      ctx.closePath()
+      ctx.save()
+      this.setNumber(ctx)
+    }
+    setNumber (ctx){
+      ctx.font = 'bold 28px Sans-Serif'
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      var pos = []
+      pos[0] = this.center[0]
+      pos[1] = this.center[1] - this.innerRad + 16
+      for(var i = 1; i < 13; i++){
+        pos = this.NexPos(pos, 30)
+        ctx.fillText(i, pos[0], pos[1])
+      }
+    }
+  }
+  // 画时针、分针、秒针
+  class DrawLine extends CountNexPos {
+    constructor(obj, length, lineWidth,time, theta, center = [250, 250]){
+      super(center)
+      this.ctx = obj
+      // 画线的长度,宽度,坐标
+      this.length = length
+      this.lineWidth = lineWidth
+      this.theta = theta
+      var point = [center[0], (center[1] - this.length)]
+      this.curPos = this.NexPos(point, time*theta)
+    }
+
+    setPos (color){
+      this.ctx.save()
+      this.ctx.beginPath()
+      this.ctx.lineWidth = this.lineWidth
+      this.ctx.strokeStyle = color
+      this.ctx.moveTo(this.center[0], this.center[1])
+      this.ctx.lineTo(this.curPos[0], this.curPos[1])
+      this.ctx.stroke()
+      this.ctx.closePath()
+      this.ctx.restore()
+      this.curPos = this.NexPos(this.curPos, this.theta)
+    }
+
+    static init () {
+      var date = new Date()
+      var hour = date.getHours()
+      var minute = date.getMinutes()
+      var sec = date.getSeconds()
+      this.handHour = new DrawLine(ctx, 80, 7, hour, 360/3600/12)
+      this.handMinu = new DrawLine(ctx, 150, 4, minute, 360/3600)
+      this.handSec = new DrawLine(ctx, 170, 1, sec, 360/60)
+      this.handHour.setPos()
+      this.handMinu.setPos()
+      this.handSec.setPos('#f00')
+    }
+    static setInit(){
+      this.handHour.setPos()
+      this.handMinu.setPos()
+      this.handSec.setPos('#f00')
+    }
+  }
+  var drawing = document.getElementById('draw')
+  var ctx = drawing.getContext('2d')
+
+  window.onload = function(){
+    // 画数字表盘
+    new Clock().setClock(ctx)
+    // 指针初始化
+    DrawLine.init()
+    setInterval(function(){
+      ctx.clearRect(0, 0, drawing.width, drawing.height)
+      new Clock().setClock(ctx)
+      // 指针循环运动
+      DrawLine.setInit()
+    }, 1000)
+  }
+</script>
+</html>
