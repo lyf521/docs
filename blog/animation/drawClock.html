@@ -33,7 +33,7 @@
 
       cxt.stroke() // 画图
       cxt.closePath()
-      cxt.restore() //将旋转后的元素放回原画布, 恢复初始状态
+      cxt.restore() //返回之前保存过的路径状态和属性
     }
   }
   var canvas = document.getElementById('clock')
@@ -54,7 +54,7 @@
     cxt.lineWidth = 5 //设置画笔的线宽
     cxt.strokeStyle = 'blue' // 设置画笔的颜色
 
-    cxt.arc(250, 250, 200, 0, 360, false) // 画圆,坐标250,250 半径200 整圆(0-360度) false表示顺时针
+    cxt.arc(250, 250, 200, 0, Math.PI*2, false) // 画圆,坐标250,250 半径200 整圆(0-360度) false表示顺时针
     cxt.stroke() // 画图
     cxt.closePath() // 结束画布
 
@@ -90,7 +90,7 @@
 
       cxt.stroke() // 画图
       cxt.closePath()
-      cxt.restore() //将旋转后的元素放回原画布
+      cxt.restore() //返回之前保存过的路径状态和属性
     }
 
     // 画时针
